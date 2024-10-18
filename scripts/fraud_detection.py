@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
+from sklearn.preprocessing import LabelEncoder
 
 def load_data(docs):
     Credit_Card = pd.read_csv(f'{docs}/creditcard.csv')
@@ -22,3 +23,12 @@ def find_missing_values(df):
     print(f"From {df.shape[1]} columns selected, there are {missing_data_summary_table.shape[0]} columns with missing values.")
 
     return missing_data_summary_table
+
+def encodingCategoricalVariables(dataframe):
+    categorical_columns = ['device_id','source','browser','country']
+    encoder = LabelEncoder()
+    for col in categorical_columns:
+        dataframe[col + '_encoded'] = encoder.fit_transform(dataframe[col])
+    dataframe.drop(columns=categorical_columns, inplace=True)
+    
+    return dataframe
