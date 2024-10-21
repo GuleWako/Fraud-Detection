@@ -4,5 +4,4 @@ pycache/
 .env
 docs
 Dash
-FlaskAPI
 *.pkl
