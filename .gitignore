@@ -3,3 +3,6 @@ pycache/
 .venv/
 .env
 docs
+Dash
+FlaskAPI
+*.pkl
