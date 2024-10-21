@@ -3,5 +3,4 @@ pycache/
 .venv/
 .env
 docs
-Dash
 *.pkl
