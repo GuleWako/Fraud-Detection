@@ -5,7 +5,7 @@ import numpy as np
 app = Flask(__name__)
 
 # Load the trained model
-rf_clf = joblib.load('../models/fraud_data_model.pkl')
+rf_clf = joblib.load('models/fraud_data_model.pkl')
 model = rf_clf 
 
 @app.route('/')
